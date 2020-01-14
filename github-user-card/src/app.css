@@ -1,0 +1,58 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-title{
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-subtitle{
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-text{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-img{
+  max-width: 200px;
+}
+
+.follower-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div.followersinfo.card-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
