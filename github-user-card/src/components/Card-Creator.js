@@ -1,5 +1,6 @@
 import React from 'react';
 
+import '../app.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   Card, CardImg, CardText, CardBody,
@@ -10,7 +11,7 @@ import {
 const CardCreator = props => {
   return (
     <div>
-      <Card>
+      <Card style={{backgroundColor: '#478af5'}}>
         <CardImg src={props.user.avatar_url} alt="Card image cap" />
         <CardBody>
           <CardTitle>Name: {props.user.name}</CardTitle>
@@ -21,16 +22,17 @@ const CardCreator = props => {
           <CardText>Following: {props.user.following}</CardText>
           <CardText>Bio: {props.user.bio}</CardText>
           <CardSubtitle>Followers: </CardSubtitle>
-            <Card> {props.followers.map(followme => {
+            <Card style={{backgroundColor: '#749fe3', border: '1px solid white'}}> {props.followers.map(item => {
               return (
-              <div className='follower-div'>
-                <CardImg src={followme.avatar_url} />
+              <div className='follower-div' style={{backgroundColor: '#4775bf', border: '1px solid white', margin: '10px', padding: '10px'}}>
+                <CardImg style={{marginTop: '18px'}} src={item.avatar_url} />
                 <CardBody className='followersinfo'>
-                  <CardText>{followme.name}</CardText>
-                  <CardText>Username: {followme.login}</CardText>
+                  <CardText>{item.name}</CardText>
+                  <CardText>Username: {item.login}</CardText>
                   <CardText> Click below to see my work on github! </CardText>
-                  <Button>{followme.html_url}</Button>
+                  <Button><a style={{textDecoration: "none", color: "white"}} href={"https://github.com/" + item.login} target="_blank" rel='noopener noreferrer'>{item.html_url}</a></Button>
                 </CardBody>
+
               </div>
             );
         })}</Card>

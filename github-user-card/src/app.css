@@ -3,6 +3,7 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #478af5;
 }
 
 .App{
@@ -11,6 +12,7 @@ body{
   justify-content: center;
   align-items: center;
   max-width: 500px;
+  background-color: #749fe3;
 }
 
 .card{
@@ -57,4 +59,18 @@ div.followersinfo.card-body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.form-header{
+  font-size: 30px;
+  color: #142d54;
+}
+
+.input-group{
+  margin-bottom: 10%;
+}
+
+a{
+  text-decoration: none;
+  color: white;
 }

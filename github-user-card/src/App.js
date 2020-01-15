@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import './app.css';
 import CardCreator from './components/Card-Creator';
+import InputForm from './components/Form';
 
 class App extends Component {
 
@@ -43,6 +44,7 @@ class App extends Component {
     }
 
     handleChanges = e =>{
+
       this.setState({
         userText: e.target.value
       })
@@ -60,20 +62,14 @@ class App extends Component {
       .catch(err => console.log(err))
     }
 
-    // Build a form that allows you to search for different Github users. When the form is submitted, use componentDidUpdate to fetch the data for the user you typed in. Set that new user's data to state to trigger the component to rerender and display your new user. Don't forget to fetch their followers as well.
-
   render(){
     return (
       <div className='App'>
-        <div>
-          <h1>User Search</h1>
-          <input 
-            type='text'
-            value={this.state.doggoText}
-            onChange={this.handleChanges}
-          />
-          <button onClick={this.fetchUsers}>Find User</button>
-        </div>
+        <InputForm 
+          updateText={this.state.userText}
+          changeHandler={this.handleChanges}
+          fetch={this.fetchUsers}
+        />
         <CardCreator 
           user={this.state.user}
           followers={this.state.followers}
