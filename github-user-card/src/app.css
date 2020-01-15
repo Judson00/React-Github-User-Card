@@ -1,0 +1,76 @@
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #478af5;
+}
+
+.App{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  background-color: #749fe3;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-title{
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-subtitle{
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-text{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-img{
+  max-width: 200px;
+}
+
+.follower-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div.followersinfo.card-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-header{
+  font-size: 30px;
+  color: #142d54;
+}
+
+.input-group{
+  margin-bottom: 10%;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
