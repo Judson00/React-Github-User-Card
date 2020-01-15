@@ -27,7 +27,7 @@ const CardCreator = props => {
                 <CardImg src={followme.avatar_url} />
                 <CardBody className='followersinfo'>
                   <CardText>{followme.name}</CardText>
-                  <CardText>USERNAME: {followme.login}</CardText>
+                  <CardText>Username: {followme.login}</CardText>
                   <CardText> Click below to see my work on github! </CardText>
                   <Button>{followme.html_url}</Button>
                 </CardBody>

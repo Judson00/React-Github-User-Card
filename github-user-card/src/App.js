@@ -10,7 +10,8 @@ class App extends Component {
     super();
     this.state = {
       user: [],
-      followers: []
+      followers: [],
+      userText: ''
     }
   }
   componentDidMount(){
@@ -35,9 +36,44 @@ class App extends Component {
         })
     }
 
+    componentDidUpdate(prevProps, prevState){
+      if(this.state.user !== prevState.user && this.state.user === '' ){
+        alert("Not a valid UserName")
+      }
+    }
+
+    handleChanges = e =>{
+      this.setState({
+        userText: e.target.value
+      })
+    }
+
+    fetchUsers = e => {
+      e.preventDefault()
+      axios
+      .get(`https://api.github.com/users/${this.state.userText}`)
+      .then(res => {
+        this.setState({
+          user: res.data
+        })
+      })
+      .catch(err => console.log(err))
+    }
+
+    // Build a form that allows you to search for different Github users. When the form is submitted, use componentDidUpdate to fetch the data for the user you typed in. Set that new user's data to state to trigger the component to rerender and display your new user. Don't forget to fetch their followers as well.
+
   render(){
     return (
       <div className='App'>
+        <div>
+          <h1>User Search</h1>
+          <input 
+            type='text'
+            value={this.state.doggoText}
+            onChange={this.handleChanges}
+          />
+          <button onClick={this.fetchUsers}>Find User</button>
+        </div>
         <CardCreator 
           user={this.state.user}
           followers={this.state.followers}
